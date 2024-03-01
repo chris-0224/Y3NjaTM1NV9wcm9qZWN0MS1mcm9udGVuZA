@@ -1,13 +1,146 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Anta", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #1f1f1f;
+  min-width: 1280px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/************************************************************/
+.page-header {
+  display: flex;
+  align-items: center;
+
+  position: sticky;
+  margin-top: 1rem;
+  min-width: 960px;
+}
+
+.page-header *{
+  font-family: inherit;
+}
+
+.page-header .header-start {
+  margin-right: 5rem;
+}
+.page-header .header-start *{
+  font-style: italic;
+
+  color: lightgray;
+  margin: 0;
+  padding: 0;
+}
+
+.page-header h1 {
+  font-weight: 1000;
+
+  text-shadow: lightgray 1px 1px 20px;
+
+}
+
+.page-header h2 {
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.page-header .search-bar {
+  margin-left: auto;
+}
+
+/************************************************************/
+.search-bar {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.search-bar form input {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  border-radius: 10px;
+  height: 2em;
+  width: 1.75em;
+
+  transition: all 0.2s;
+}
+
+.search-bar button{
+  border: none;
+  background: none;
+
+  margin-left: 10px;
+  padding: 0;
+}
+
+.search-bar button svg {
+  transition: all 0.2s;
+}
+
+.search-bar button svg:hover {
+  height: 2.5em;
+  width: 2.5em;
+
+  cursor: pointer;
+}
+.search-bar span {
+  color: lightgray;
+}
+
+/************************************************************/
+.navbar ul{
+  list-style-type: none;
+}
+
+.navbar li{
+  position: relative;
+  top: 0.5rem;
+  display: inline-block;
+  margin-right: 4rem;
+  /*width: 2rem;*/
+}
+
+/************************************************************/
+
+.nav-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 0;
+  background-color: transparent;
+}
+
+.nav-button svg {
+  margin-bottom: 10px;
+}
+
+.nav-button p {
+  margin: 0;
+  padding: 0;
+
+  color: lightgray;
+  text-shadow: lightgray 1px 1px 20px;
+
+  transform: scale(1);
+  transition: all 0.2s;
+}
+
+.nav-button p:hover {
+  transform: scale(1.25);
+}
+
+.nav-button *:hover {
+  cursor: pointer;
+}
+
+/*****************************EXPANDING CARDS*******************************/

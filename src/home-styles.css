@@ -1,0 +1,34 @@
+.homepage-container {
+    width: 100vw;
+    height: 100vh;
+
+    color: lightgray;
+    background-image: url("../public/backgroundimg.jpg");
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+.homepage-container hr {
+    border: 1px solid lightgray;
+}
+
+.homepage-container .grid-container {
+    display: grid;
+    grid-template-columns: auto 1280px auto;
+}
+
+.homepage-container .middle-container {
+    /*width: 960px;*/
+}
+
+.homepage-container .body-container > p {
+    font-size: 3rem;
+    text-wrap: normal;
+    font-weight: 1;
+    font-variant: small-caps;
+
+    letter-spacing: 0.25em;
+    text-align: center;
+    text-shadow: lightgray 1px 10px 10px;
+
+}
