@@ -1,13 +1,16 @@
 
-import './home-styles.css';
-import PageHeader from "./page-header";
-import Footer from "./page-footer";
-import ExpandingCards from "./expanding-cards";
+import '../home-styles.css';
+import PageHeader from "../page-header";
+import Footer from "../page-footer";
+import ExpandingCards from "../expanding-cards";
+import Banner from "../banner";
 
 function Body(){
     return (
         <div className="body-container">
-            <p>Delivering the newest and hottest games in speedy time.</p>
+            <p>Delivering the newest and hottest
+                <br/>All-things-Gaming&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br/>&nbsp;&nbsp;<span>in speedy time</span>.</p>
             <ExpandingCards/>
         </div>
     )
@@ -21,6 +24,7 @@ function Home() {
               </div>
               <div className="middle-container">
                   <PageHeader/>
+                  <Banner text="Limited-Time Edition: Get yours today!"/>
                   <Body/>
               </div>
               <div className="rightmost-container">
