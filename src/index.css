@@ -4,12 +4,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #1f1f1f;
+  /*
   min-width: 1280px;
+  */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/******************************GENERAL PAGE CONTAINER STYLE******************************/
+.homepage-container, .storepage-container {
+  min-width: 100vw;
+  min-height: 100vh;
+
+  color: lightgray;
+  background-image: url("../public/backgroundimg.jpg");
+  background-repeat: repeat;
+  background-size: contain;
 }
 
 /************************************************************/
@@ -143,4 +156,66 @@ code {
   cursor: pointer;
 }
 
-/*****************************EXPANDING CARDS*******************************/
+/******************************BANNER******************************/
+@keyframes fadeInOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.1;
+  }
+}
+
+.banner-container {
+  background: rgb(167,52,52);
+  background: radial-gradient(circle, rgba(167,52,52,1) 0%, rgba(130,76,76,0) 100%);
+  /*
+  box-shadow: 1px -1px 29px 10px rgba(120,0,0,0.75);
+  */
+  border-radius: 50px;
+
+  animation: fadeInOut 3s ease-in-out infinite alternate;
+}
+
+.banner-container h2 {
+  font-size: 1.5rem;
+  font-weight: 1;
+  font-variant: small-caps;
+
+  text-align: center;
+
+  border-top: 5px ridge rgb(128, 41, 41);
+  border-bottom: 5px ridge rgb(128, 41, 41);
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+}
+
+/******************************EXPANDING CARDS******************************/
+
+/******************************MEDIA-PROMO******************************/
+
+.media-promo-container {
+  display: flex;
+}
+.media-promo-container .content-body-container {
+  margin: 0 auto 0 5%;
+}
+
+.media-promo-container p {
+  line-height: 1.75rem;
+}
+.media-promo-container h2 {
+  text-align: center;
+  font-variant: small-caps;
+  text-decoration: underline;
+}
+.media-promo-container img{
+  border: 5px solid black;
+
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px lightgray;
+
+}
