@@ -1,0 +1,128 @@
+
+.storepage-container .store-header {
+    background: rgb(167,52,52);
+    background: radial-gradient(circle, rgba(167,52,52,1) 0%, rgba(130,76,76,0) 100%);
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+
+    text-align: center;
+}
+
+.storepage-container .section-header {
+    background: rgb(130,76,76);
+    background: linear-gradient(90deg, rgba(130,76,76,1) 0%, rgba(175,175,175,0) 50%);
+    border-radius: 20px;
+
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    margin: 50px 0;
+}
+
+.storepage-container .grid-container {
+    display: grid;
+    grid-template-columns: auto 1280px auto;
+}
+
+.storepage-container .items-grid-container {
+    grid-area: items-grid;
+    /*
+    justify-content: center;
+    */
+
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px;
+    grid-gap: 30px 60px;
+}
+
+.storepage-container .item-container {
+    border-style: outset;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 10px;
+
+    font: inherit;
+    color: inherit;
+
+    transition: all 0.2s;
+}
+
+.storepage-container .item-container:hover {
+    cursor: pointer;
+
+    border: 2px solid lightgray;
+    box-shadow: 1px 1px 10px lightgray;
+    transform: scale3d(1.1,1.1,1.1);
+}
+
+.storepage-container .item-desc-container {
+
+    height: 30%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    margin-top: 10px;
+    margin-bottom: 5%;
+}
+
+.storepage-container .item-desc-container p {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.storepage-container .item-desc-container .flex-container {
+    display: flex;
+    margin-bottom: 5px;
+
+}
+
+@keyframes fadeInOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.1;
+    }
+}
+
+.storepage-container .notes-content {
+    color: red;
+    margin-left: auto;
+
+    animation: fadeInOut 2s ease-in-out infinite alternate;
+}
+
+.storepage-container p {
+    margin: 0;
+}
+
+.storepage-container .item-container img{
+    display: block;
+    /*
+    margin-bottom: 40px;
+    */
+    border-radius: 10px;
+}
+
+.storepage-container .outer-items-grid-container {
+    display: grid;
+
+    grid-template-areas: "items-grid";
+
+    gap: 50px;
+}
+
+/* FILTERS CONTAINER */
+
+.storepage-container .filters-container {
+    grid-area: filters-container;
+
+    background-color: lightgray;
+    border-radius: 10px;
+
+}
