@@ -5,11 +5,13 @@ import {
     RouterProvider,
 } from "react-router-dom";
 
-import './index.css';
-import Home from './routes/home';
+import './stylesheets/index.css';
+import Home from './site-pages/home';
 import reportWebVitals from './reportWebVitals';
 import ErrorPage from "./error-page";
-import Store from "./routes/store";
+import Store from "./site-pages/store";
+import CommunityEvents from "./site-pages/community";
+import ContactUs from "./site-pages/contact";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +22,16 @@ const router = createBrowserRouter([
     {
         path: '/store',
         element: <Store/>,
+        errorElement: <ErrorPage/>
+    },
+    {
+        path: '/community',
+        element: <CommunityEvents/>,
+        errorElement: <ErrorPage/>
+    },
+    {
+        path: '/contact',
+        element: <ContactUs/>,
         errorElement: <ErrorPage/>
     }
 ])
