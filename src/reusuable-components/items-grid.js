@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-import {getStoreItems} from "./data-interface";
-import placeholder_img from "./placeholder-image.png";
+import {getStoreItems} from "../data-interface";
+import placeholder_img from "../media/placeholder-image.png";
 
 function Item({name, price, img, notes}){
     const item_image = img ? img : placeholder_img;

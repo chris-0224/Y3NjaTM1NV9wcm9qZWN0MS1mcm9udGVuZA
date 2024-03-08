@@ -1,4 +1,4 @@
-import placeholder_img from "./placeholder-image.png";
+import placeholder_img from "../media/placeholder-image.png";
 
 export default function MediaPromotion({title, img, desc, width, attribute, id}){
     const image = img ? img : placeholder_img;
