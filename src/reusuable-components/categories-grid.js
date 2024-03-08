@@ -1,4 +1,4 @@
-import placeholder_img from "./placeholder-image.png";
+import placeholder_img from "../media/placeholder-image.png";
 
 function CategoryItem({title, img}){
     const image = img ? img : placeholder_img;
