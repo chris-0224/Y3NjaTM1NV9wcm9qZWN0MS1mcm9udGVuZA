@@ -1,0 +1,128 @@
+.community-events-container .community-page-header {
+    background: rgb(167,52,52);
+    background: radial-gradient(circle, rgba(167,52,52,1) 0%, rgba(130,76,76,0) 100%);
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+
+    text-align: center;
+    letter-spacing: 0.75em;
+}
+
+.community-events-container .grid-container {
+    display: grid;
+    grid-template-columns: auto 1280px auto;
+}
+
+.media-promo-container[id="event-news"] {
+    flex-direction: column;
+    align-items: center;
+}
+
+.community-events-container .section-header {
+    border-radius: 20px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    margin: 50px 0;
+}
+
+.community-events-container .section-header.type1 {
+    background: rgb(130,76,76);
+    background: linear-gradient(90deg, rgba(130,76,76,1) 0%, rgba(175,175,175,0) 50%);
+
+    padding-left: 20px;
+}
+
+.community-events-container .section-header.type2 {
+    background: rgba(130,76,76,80%);
+    box-shadow: 0 0 20px 10px rgb(143, 93, 93);
+    text-align: center;
+}
+
+.community-events-container .events-schedule-table {
+    width: 100%;
+
+    text-align: center;
+    vertical-align: center;
+    text-overflow: ellipsis;
+    border-spacing: 2rem;
+}
+
+.community-events-container .events-schedule-table th {
+    font-variant: small-caps;
+    letter-spacing: 0.1rem;
+
+    text-shadow: 1px 1px 20px lightgray;
+}
+
+.community-events-container .time-info {
+    width: 250px;
+}
+
+.community-events-container .event-desc {
+    width: 350px;
+}
+
+.community-events-container .event-name {
+    width: 200px;
+}
+
+.community-events-container .event-fee {
+    width: 150px;
+}
+
+
+.community-events-container th.time-info {
+    text-decoration: underline;
+}
+.community-events-container th.event-desc {
+    text-decoration: underline;
+}
+.community-events-container th.event-name {
+    text-decoration: underline;
+}
+.community-events-container th.event-fee {
+    text-decoration: underline;
+}
+
+/* ############################# FORM STYLES ############################# */
+.community-events-container .interest-form {
+    width: fit-content;
+}
+
+.community-events-container .interest-form > div {
+    margin-bottom: 10px;
+}
+
+.community-events-container .interest-form button[type="submit"] {
+    display: block;
+
+    font-variant: small-caps;
+    font-weight: bold;
+    font-family: "Anta", serif;
+    letter-spacing: 0.1rem;
+
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    margin-left: auto;
+    margin-right: auto;
+
+    transition: all 0.1s ease-in-out;
+}
+
+.community-events-container .interest-form button[type="submit"]:hover {
+    transform: scale(1.1,1.1);
+}
+
+.community-events-container .interest-form textarea {
+    border-radius: 10px;
+    resize: none;
+}
+
+.community-events-container .submit-alert-container {
+    color: lightgreen;
+}
