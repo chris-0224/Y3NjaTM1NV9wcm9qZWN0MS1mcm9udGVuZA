@@ -1,7 +1,7 @@
-import PageHeader from "../page-header";
-import Banner from "../banner";
-import Footer from "../page-footer";
-import '../store-styles.css'
+import PageHeader from "../reusuable-components/page-header";
+import Banner from "../reusuable-components/banner";
+import Footer from "../reusuable-components/page-footer";
+import '../stylesheets/store-styles.css'
 import {getStoreItems} from "../data-interface";
 import {useEffect, useState} from "react";
 
@@ -9,10 +9,10 @@ import doomguy from '../media/doomguy.jpg';
 import gamingsetup from '../media/gaming-setup.jpg';
 import merch from '../media/merchandise.jpg';
 
-import MediaPromotion from "../media-promotion";
+import MediaPromotion from "../reusuable-components/media-promotion";
 import {dummyText} from "../data.ts";
-import ItemsGrid from "../items-grid";
-import CategoriesGrid from "../categories-grid";
+import ItemsGrid from "../reusuable-components/items-grid";
+import CategoriesGrid from "../reusuable-components/categories-grid";
 
 
 function ItemFilters(){
