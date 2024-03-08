@@ -3,48 +3,60 @@ import Footer from "../reusuable-components/page-footer";
 import {useEffect, useState} from "react";
 
 import '../stylesheets/contact-styles.css';
-import {dummyText, dummyText2, dummyText3, dummyText4, dummyText5, eventInformation} from "../data.ts";
+import {dummyText, dummyText2, dummyText3, dummyText4, dummyText5} from "../data.ts";
 
 
 function QASections(){
     return (
         <div className="qa-sections-container">
-            <section id="Donec-mollis">
-                <h2>1. Donec mollis</h2>
-                <p>{dummyText4}</p>
-                <ul>
-                    <li>
-                        <h3>In rhoncus</h3>
-                        <p>{dummyText}</p>
-                    </li>
-                    <li>
-                        <h3>Cras non leo dapibus</h3>
-                        <p>{dummyText2}</p>
-                    </li>
-                </ul>
-            </section>
-            <section id="Aliquam-placerat">
-                <h2>2. Aliquam placerat</h2>
-                <p>{dummyText3}</p>
-            </section>
-            <section id="Morbi-tempor">
-                <h2>3. Morbi tempor</h2>
-                <p>{dummyText5}</p>
-                <ul>
-                    <li>
-                        <h3>Nullam elementum</h3>
+            <ol className="qa-sections-list">
+                <li>
+                    <section id="Donec-mollis">
+                        <h2>Donec mollis</h2>
+                        <p>{dummyText4}</p>
+                        <ul>
+                            <li>
+                                <h3>In rhoncus</h3>
+                                <p>{dummyText}</p>
+                            </li>
+                            <li>
+                                <h3>Cras non leo dapibus</h3>
+                                <p>{dummyText2}</p>
+                            </li>
+                        </ul>
+                    </section>
+                </li>
+
+                <li>
+                    <section id="Aliquam-placerat">
+                        <h2>Aliquam placerat</h2>
                         <p>{dummyText3}</p>
-                    </li>
-                    <li>
-                        <h3>Vestibulum ante ipsum</h3>
-                        <p>{dummyText}</p>
-                    </li>
-                </ul>
-            </section>
-            <section id="Proin-ac-fermentum">
-                <h2>4. Proin ac fermentum</h2>
-                <p>{dummyText2}</p>
-            </section>
+                    </section>
+                </li>
+
+                <li>
+                    <section id="Morbi-tempor">
+                        <h2>Morbi tempor</h2>
+                        <p>{dummyText5}</p>
+                        <ul>
+                            <li>
+                                <h3>Nullam elementum</h3>
+                                <p>{dummyText3}</p>
+                            </li>
+                            <li>
+                                <h3>Vestibulum ante ipsum</h3>
+                                <p>{dummyText}</p>
+                            </li>
+                        </ul>
+                    </section>
+                </li>
+                <li>
+                    <section id="Proin-ac-fermentum">
+                        <h2>Proin ac fermentum</h2>
+                        <p>{dummyText2}</p>
+                    </section>
+                </li>
+            </ol>
         </div>
     )
 }
@@ -74,7 +86,10 @@ function QAList() {
 
 function ContactUsForm(){
     const [formSubmitted, setFormSubmitted] = useState(false);
-    const possibleRoles = ["Spectator", "Organizer", "Participant"]
+    const generalQuestions = ["Vivamus erat tortor", "Nam ligula nibh", "Praesent sollicitudin"];
+    const eventQuestions = ["Cras ex diam", "Phasellus at quam", "Duis faucibus"];
+    const billingQuestions = ["Nunc mollis", "Aliquam pulvinar", "Sed egestas suscipit"];
+
     function submitForm(e){
         e.preventDefault();
 
@@ -84,15 +99,15 @@ function ContactUsForm(){
     }
 
     return (
-        <div className="interest-form-container">
+        <div className="contact-us-form-container">
             {formSubmitted ?
                 <div className="submit-alert-container">
-                    <h2>Form Submitted! Thank you for your interest!</h2>
+                    <h2>Form Submitted! We'll contact you back within 7 business days!</h2>
                 </div>
                 : <></>
             }
 
-            <form className="interest-form" method="POST" onSubmit={submitForm}>
+            <form className="contact-us-form" method="POST" onSubmit={submitForm}>
                 <div>
                     <label htmlFor="firstName">First Name: </label>
                     <input type="text" id="firstName" name="firstName" required autoFocus/>
@@ -104,36 +119,41 @@ function ContactUsForm(){
                 </div>
 
                 <div>
-                    <label htmlFor="event-select">Question Type: </label>
-                    <select id="event-select" name="events" required>
+                    <label htmlFor="question-select">Question Type: </label>
+                    <select id="question-select" name="questions" required>
                         <option value={null}>=====Choose an Option=====</option>
-                        {eventInformation.map((eventInfo) => {
-                            return (
-                                <option key={crypto.randomUUID()} value={eventInfo.eventID}>{eventInfo.dateTime}</option>
-                            )
-                        })}
+                        <hr/>
+                        <optgroup label="General">
+                            {generalQuestions.map((q) => {
+                                return (
+                                    <option key={crypto.randomUUID()} value={q}>{q}</option>
+                                )
+                            })}
+                        </optgroup>
+                        <hr/>
+                        <optgroup label="Event">
+                            {eventQuestions.map((q) => {
+                                return (
+                                    <option key={crypto.randomUUID()} value={q}>{q}</option>
+                                )
+                            })}
+                        </optgroup>
+                        <hr/>
+                        <optgroup label="Billing">
+                            {billingQuestions.map((q) => {
+                                return (
+                                    <option key={crypto.randomUUID()} value={q}>{q}</option>
+                                )
+                            })}
+                        </optgroup>
                     </select>
-                </div>
-
-                <div>
-                    <label>Roles Interested In: </label>
-                    <div className="role-checkboxes-container">
-                        {possibleRoles.map((role) => {
-                            return (
-                                <>
-                                    <input type="checkbox" id={role} name={role}/>
-                                    <label htmlFor={role}>{role}</label>
-                                </>
-                            )
-                        })}
-                    </div>
                 </div>
 
                 <div>
                     <label htmlFor="desc">Description: </label>
                     <br/>
-                    <textarea id="desc" name="description" rows="5" cols="40"
-                              placeholder="Enter any further information here..."></textarea>
+                    <textarea id="desc" name="description" rows="5" cols="40" required
+                              placeholder="Enter an explanation for your question..."></textarea>
                 </div>
 
                 <div>
