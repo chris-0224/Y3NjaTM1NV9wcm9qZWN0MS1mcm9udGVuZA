@@ -1,9 +1,9 @@
 
-import '../home-styles.css';
-import PageHeader from "../page-header";
-import Footer from "../page-footer";
-import ExpandingCards from "../expanding-cards";
-import Banner from "../banner";
+import '../stylesheets/home-styles.css';
+import PageHeader from "../reusuable-components/page-header";
+import Footer from "../reusuable-components/page-footer";
+import ExpandingCards from "../reusuable-components/expanding-cards";
+import Banner from "../reusuable-components/banner";
 
 function Body(){
     return (

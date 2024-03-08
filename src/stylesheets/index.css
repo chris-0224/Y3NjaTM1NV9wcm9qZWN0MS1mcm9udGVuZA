@@ -15,12 +15,12 @@ code {
 }
 
 /******************************GENERAL PAGE CONTAINER STYLE******************************/
-.homepage-container, .storepage-container {
+.homepage-container, .storepage-container, .community-events-container, .contact-us-page-container {
   min-width: 100vw;
   min-height: 100vh;
 
   color: lightgray;
-  background-image: url("../public/backgroundimg.jpg");
+  background-image: url("../../public/backgroundimg.jpg");
   background-repeat: repeat;
   background-size: contain;
 }
