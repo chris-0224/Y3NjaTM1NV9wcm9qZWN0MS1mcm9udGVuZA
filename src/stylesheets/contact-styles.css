@@ -42,8 +42,61 @@
 .contact-us-page-container .q-a-list li, ul {
     margin-bottom: 1em;
 }
+.contact-us-page-container .q-a-list li ul {
+    list-style-type: disc;
+}
 
 .contact-us-page-container a {
     text-decoration: underline;
     color: inherit;
+}
+
+.contact-us-page-container .qa-sections-list > li::marker {
+    font-size: 1.5em;
+}
+
+.contact-us-page-container .qa-sections-list ul {
+    list-style-type: disc;
+}
+
+.contact-us-page-container .qa-sections-list ul li::marker {
+    font-size: 1.25em;
+}
+
+/* ############################# FORM STYLES ############################# */
+.contact-us-page-container .contact-us-form {
+    width: fit-content;
+}
+
+.contact-us-page-container .contact-us-form > div {
+    margin-bottom: 10px;
+}
+
+.contact-us-page-container .contact-us-form button[type="submit"] {
+    display: block;
+
+    font-variant: small-caps;
+    font-weight: bold;
+    font-family: "Anta", serif;
+    letter-spacing: 0.1rem;
+
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    margin-left: auto;
+    margin-right: auto;
+
+    transition: all 0.1s ease-in-out;
+}
+
+.contact-us-page-container .contact-us-form button[type="submit"]:hover {
+    transform: scale(1.1,1.1);
+}
+
+.contact-us-page-container .contact-us-form textarea {
+    border-radius: 10px;
+    resize: none;
+}
+
+.contact-us-page-container .submit-alert-container {
+    color: lightgreen;
 }
