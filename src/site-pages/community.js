@@ -1,6 +1,6 @@
-import PageHeader from "../reusuable-components/page-header";
+import NavBar from "../reusuable-components/nav-bar";
 import Footer from "../reusuable-components/page-footer";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 import '../stylesheets/community-styles.css';
 import MediaPromotion from "../reusuable-components/media-promotion";
@@ -8,13 +8,11 @@ import gamingTournament from "../media/gaming-tournament.jpg";
 import {dummyText, dummyText2, eventInformation} from "../data.ts";
 
 
-function InterestForm({currEvents}){
+function InterestForm(){
     const [formSubmitted, setFormSubmitted] = useState(false);
     const possibleRoles = ["Spectator", "Organizer", "Participant"]
     function submitForm(e){
         e.preventDefault();
-
-
 
         setFormSubmitted(true);
     }
@@ -31,7 +29,7 @@ function InterestForm({currEvents}){
             <form className="interest-form" method="POST" onSubmit={submitForm}>
                 <div>
                     <label htmlFor="firstName">First Name: </label>
-                    <input type="text" id="firstName" name="firstName" required autoFocus/>
+                    <input type="text" id="firstName" name="firstName" required/>
                 </div>
 
                 <div>
@@ -100,12 +98,6 @@ function InterestForm({currEvents}){
 }
 
 function Body() {
-
-    useEffect(() => {
-
-    }, []);
-
-    // TODO: make cool changing pictures based on user input
     return (
         <div className="body-container">
             <h2 className="community-page-header">COMMUNITY EVENTS </h2>
@@ -120,6 +112,7 @@ function Body() {
                     <th className="event-desc">Event Description</th>
                     <th className="event-fee">Event Entrance Fee</th>
                 </tr>
+                </thead>
                 {eventInformation.map((eventInfo) => {
                     return (
                         <tr key={crypto.randomUUID()}>
@@ -130,7 +123,6 @@ function Body() {
                         </tr>
                     )
                 })}
-                </thead>
             </table>
 
             <h2 className="section-header type1">INTEREST FORM</h2>
@@ -148,13 +140,12 @@ export default function CommunityEvents() {
             <div className="grid-container">
                 <div className="leftmost-container"></div>
                 <div className="middle-container">
-                    <PageHeader/>
+                    <NavBar/>
                     <Body/>
                 </div>
                 <div className="rightmost-container"></div>
+                <Footer/>
             </div>
-            <Footer/>
-
         </div>
     )
 }
