@@ -1,43 +1,72 @@
-import PageHeader from "../reusuable-components/page-header";
-import Banner from "../reusuable-components/banner";
+import NavBar from "../reusuable-components/nav-bar";
 import Footer from "../reusuable-components/page-footer";
 import '../stylesheets/store-styles.css'
-import {getStoreItems} from "../data-interface";
-import {useEffect, useState} from "react";
 
 import doomguy from '../media/doomguy.jpg';
+import darksouls from '../media/darksouls.jpg';
+import eldenring from '../media/elden-ring.jpg';
+import deadspace from '../media/deadspace.jpg';
+import halo from '../media/master-chief.jpg';
+
 import gamingsetup from '../media/gaming-setup.jpg';
 import merch from '../media/merchandise.jpg';
 
 import MediaPromotion from "../reusuable-components/media-promotion";
-import {dummyText} from "../data.ts";
+import {dummyText, dummyText2, dummyText3, dummyText4, dummyText5} from "../data.ts";
 import ItemsGrid from "../reusuable-components/items-grid";
 import CategoriesGrid from "../reusuable-components/categories-grid";
+import MediaNavigator from "../reusuable-components/media-navigator";
 
-
-function ItemFilters(){
-    return (
-        <div className="filters-container">
-
-        </div>
-    )
-}
 function Body() {
-    const [items, setItems] = useState(null);
-
     const categories = ["Category 1", "Category 2", "Category 3", "Category 4"]
+    const mediaList_GAMING = [
+        {
+            id: "games-promo",
+            title: "Lorem Ipsum",
+            img: doomguy,
+            width: "700px",
+            height: "400px",
+            desc: dummyText
+        },
+        {
+            id: "games-promo",
+            title: "Lorem Ipsum 2",
+            img: darksouls,
+            width: "700px",
+            height: "400px",
+            desc: dummyText2
+        },
+        {
+            id: "games-promo",
+            title: "Lorem Ipsum 3",
+            img: eldenring,
+            width: "700px",
+            height: "400px",
+            desc: dummyText3
+        },
+        {
+            id: "games-promo",
+            title: "Lorem Ipsum 4",
+            img: deadspace,
+            width: "700px",
+            height: "400px",
+            desc: dummyText4
+        },
+        {
+            id: "games-promo",
+            title: "Lorem Ipsum 5",
+            img: halo,
+            width: "700px",
+            height: "400px",
+            desc: dummyText5
+        }
+    ]
 
-    useEffect(() => {
-        setItems(getStoreItems());
-    }, []);
-
-    // TODO: make cool changing pictures based on user input
     return (
         <div className="body-container">
             <h2 className="store-header">THE STORE</h2>
             <section className="games section-container">
-                <MediaPromotion id="games-promo" title="Lorem Ipsum" img={doomguy} width="700px" desc={dummyText}/>
-
+                <MediaNavigator mediaList={mediaList_GAMING}/>
                 <h2 className="section-header type1">HOT NEW GAMES</h2>
 
                 <div className="outer-items-grid-container">
@@ -75,6 +104,7 @@ function Body() {
                 <h2 className="shop-by-category-header">SHOP BY CATEGORY</h2>
                 <CategoriesGrid categoryNamesList={categories}/>
             </section>
+
         </div>
     )
 }
@@ -83,23 +113,23 @@ export default function Store() {
     return (
         <div className="storepage-container">
             <div className="grid-container">
-                <div className="leftmost-container">
-                    f
-                </div>
+                <div className="leftmost-container"></div>
                 <div className="middle-container">
-                    <PageHeader/>
+                    <NavBar/>
                     <Body/>
                 </div>
-                <div className="rightmost-container">
-                    f
-                </div>
+                <div className="rightmost-container"></div>
+                <Footer/>
             </div>
-            <Footer/>
-
         </div>
     );
 }
+
 /*
 DOOMGUY: <a href="https://wallpapers.com/wallpapers/doomguy-live-gaming-ec02pq3hos4kkijw.html">Wallpaper by johns</a> on Wallpapers.com
 Gaming Setup: <a href="https://wallpapers.com/picture/gaming-setup-pictures-0fkb78x32wxfwlbb.html">Wallpaper by timelord</a> on Wallpapers.com
- */
+master-chief: <a href="https://wallpapers.com/wallpapers/master-chief-gaming-7j0rrexaerjx7yoi.html">Wallpaper by gallaries</a> on Wallpapers.com
+elden-ring: <a href="https://wallpapers.com/wallpapers/elden-ring-red-aesthetic-art-1njkjlu18zkxtrys.html">Wallpaper by bigdawg</a> on Wallpapers.com
+deadspace: <a href="https://wallpapers.com/wallpapers/dead-space-3-cms-brusilov-ship-hwhs7i5005lkm0pu.html">Wallpaper by toriamos888</a> on Wallpapers.com
+darksouls: https://wall.alphacoders.com/big.php?i=528418
+*/
