@@ -1,44 +1,65 @@
-import {useRef, useState} from "react";
+import {createRef, useRef, useState} from "react";
 import {CSSTransition} from "react-transition-group";
 
-import placeholder from '../media/placeholder-image.png';
-
-function Panel({text, imageURL, onClickCallBack, panelID, currActivePanel}){
-    const [isActive, setIsActive] = useState(panelID === currActivePanel);
-    const panelNodeRef = useRef(null);
-
-    console.log(panelID, " ", isActive, " ", panelNodeRef);
-    return (
-        <CSSTransition nodeRef={panelNodeRef} in={isActive} timeout={500} classNames="panel-state">
-            <div ref={panelNodeRef} className="panel" style={{backgroundImage: `url(${imageURL})`}} onClick={()=>onClickCallBack(panelID)}>
-                <h3>{text}</h3>
-            </div>
-        </CSSTransition>
-    )
-}
 export default function ExpandingCards({panels}){
     const [activePanel, setActivePanel] = useState(null);
-    const testRef = useRef(null);
+    const refs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
 
     function onClick(panelID){
         setActivePanel(panelID);
     }
+    panels.map((panel, index) => {
+        return (
+            {
+                panelID: index,
+                panelObj: panel,
+                panelRef: createRef()
+            }
+        )
+    });
 
-    let panelIDCounter = 1;
     return (
         <div className="expanding-cards-container">
-            {/*<CSSTransition nodeRef={testRef} in={activePanel} timeout={500} classNames="panel-state">
-                <div ref={testRef} className="panel" style={{backgroundImage: `url(${placeholder})`}} onClick={()=>onClick(1)}>
-                    <h3>{"test"}</h3>
-                </div>
-            </CSSTransition>*/}
 
-            {panels.map((panelIn)=>{
-                return (
-                    <Panel key={crypto.randomUUID()} panelID={panelIDCounter++} text={panelIn.text} imageURL={panelIn.imageURL}
-                           onClickCallBack={onClick} currActivePanel={activePanel}/>
-                )
-            })}
+            <CSSTransition nodeRef={refs[0]} in={activePanel === 1} timeout={500} classNames="panel-state">
+                <div ref={refs[0]} className="panel" style={{backgroundImage: `url(${panels[0].imageURL})`}} onClick={()=>onClick(1)}>
+                    <h3>{panels[0].text}</h3>
+                    <p>Aenean ut porttitor odio.</p>
+                </div>
+            </CSSTransition>
+
+            <CSSTransition nodeRef={refs[1]} in={activePanel === 2} timeout={500} classNames="panel-state">
+                <div ref={refs[1]} className="panel" style={{backgroundImage: `url(${panels[1].imageURL})`}}
+                     onClick={() => onClick(2)}>
+                    <h3>{panels[1].text}</h3>
+                    <p>Aenean ut porttitor odio.</p>
+                </div>
+            </CSSTransition>
+
+            <CSSTransition nodeRef={refs[2]} in={activePanel === 3} timeout={500} classNames="panel-state">
+                <div ref={refs[2]} className="panel" style={{backgroundImage: `url(${panels[2].imageURL})`}}
+                     onClick={() => onClick(3)}>
+                    <h3>{panels[2].text}</h3>
+                    <p>Aenean ut porttitor odio.</p>
+                </div>
+            </CSSTransition>
+
+            <CSSTransition nodeRef={refs[3]} in={activePanel === 4} timeout={500} classNames="panel-state">
+                <div ref={refs[3]} className="panel" style={{backgroundImage: `url(${panels[3].imageURL})`}}
+                     onClick={() => onClick(4)}>
+                    <h3>{panels[3].text}</h3>
+                    <p>Aenean ut porttitor odio.</p>
+                </div>
+            </CSSTransition>
+
+            <CSSTransition nodeRef={refs[4]} in={activePanel === 5} timeout={500} classNames="panel-state">
+                <div ref={refs[4]} className="panel" style={{backgroundImage: `url(${panels[4].imageURL})`}}
+                     onClick={() => onClick(5)}>
+                    <h3>{panels[4].text}</h3>
+                    <p>Aenean ut porttitor odio.</p>
+                </div>
+            </CSSTransition>
+
         </div>
     )
 }
