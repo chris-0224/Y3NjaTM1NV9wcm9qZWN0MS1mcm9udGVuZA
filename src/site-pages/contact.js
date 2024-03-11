@@ -1,29 +1,47 @@
-import PageHeader from "../reusuable-components/page-header";
+import NavBar from "../reusuable-components/nav-bar";
 import Footer from "../reusuable-components/page-footer";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 import '../stylesheets/contact-styles.css';
+import icon_close from '../icons/icon-close.svg';
+import icon_expand from '../icons/icon-expand.svg';
+
 import {dummyText, dummyText2, dummyText3, dummyText4, dummyText5} from "../data.ts";
 
 
-function QASections(){
+function QABox({questionTxt, answerTxt}){
+    const [isActive, setIsActive] = useState(false);
+
+    function toggleActive(){
+        setIsActive(!isActive);
+    }
+
     return (
-        <div className="qa-sections-container">
-            <ol className="qa-sections-list">
+        <div className="qa-box-container">
+            <div className="flex-container">
+                <h3>{questionTxt}</h3>
+                <button className="toggle-button" onClick={toggleActive}>
+                    <img src={isActive ? icon_close : icon_expand} alt={isActive ? "expand" : "close"}/>
+                </button>
+            </div>
+            <div className="answer-box-container" style={{display: isActive ? "block" : "none"}}>
+                <hr/>
+                <p>{answerTxt}</p>
+            </div>
+        </div>
+    )
+}
+function FAQSections(){
+    return (
+        <div className="faq-sections-container">
+            <ol className="faq-sections-list">
                 <li>
                     <section id="Donec-mollis">
                         <h2>Donec mollis</h2>
                         <p>{dummyText4}</p>
-                        <ul>
-                            <li>
-                                <h3>In rhoncus</h3>
-                                <p>{dummyText}</p>
-                            </li>
-                            <li>
-                                <h3>Cras non leo dapibus</h3>
-                                <p>{dummyText2}</p>
-                            </li>
-                        </ul>
+                        <br/>
+                        <QABox questionTxt="In rhoncus?" answerTxt={dummyText}/>
+                        <QABox questionTxt="Cras non leo dapibus?" answerTxt={dummyText2}/>
                     </section>
                 </li>
 
@@ -38,18 +56,13 @@ function QASections(){
                     <section id="Morbi-tempor">
                         <h2>Morbi tempor</h2>
                         <p>{dummyText5}</p>
-                        <ul>
-                            <li>
-                                <h3>Nullam elementum</h3>
-                                <p>{dummyText3}</p>
-                            </li>
-                            <li>
-                                <h3>Vestibulum ante ipsum</h3>
-                                <p>{dummyText}</p>
-                            </li>
-                        </ul>
+                        <br/>
+                        <QABox questionTxt="Nullam elementum?" answerTxt={dummyText3}/>
+                        <QABox questionTxt="Vestibulum ante ipsum?" answerTxt={dummyText}/>
+
                     </section>
                 </li>
+
                 <li>
                     <section id="Proin-ac-fermentum">
                         <h2>Proin ac fermentum</h2>
@@ -63,7 +76,7 @@ function QASections(){
 
 function QAList() {
     return (
-        <ol className="q-a-list">
+        <ol className="faq-list">
             <li>
                 <a href="#Donec-mollis">Donec mollis</a>
                 <ul>
@@ -93,8 +106,6 @@ function ContactUsForm(){
     function submitForm(e){
         e.preventDefault();
 
-
-
         setFormSubmitted(true);
     }
 
@@ -110,7 +121,7 @@ function ContactUsForm(){
             <form className="contact-us-form" method="POST" onSubmit={submitForm}>
                 <div>
                     <label htmlFor="firstName">First Name: </label>
-                    <input type="text" id="firstName" name="firstName" required autoFocus/>
+                    <input type="text" id="firstName" name="firstName" required/>
                 </div>
 
                 <div>
@@ -184,20 +195,14 @@ function ContactUsForm(){
 }
 
 function Body() {
-
-    useEffect(() => {
-
-    }, []);
-
-    // TODO: make cool changing pictures based on user input
     return (
         <div className="body-container">
             <h2 className="community-page-header">CONTACT US</h2>
-            <h2 className="section-header type1">QUESTIONS / ANSWERS</h2>
+            <h2 className="section-header type1">FREQUENTLY ASKED QUESTIONS</h2>
             <p>{dummyText3}</p>
             <QAList/>
             <hr/>
-            <QASections/>
+            <FAQSections/>
             <hr/>
             <h2 className="section-header type1">STILL NEED HELP? CONTACT US!</h2>
             <ContactUsForm/>
@@ -211,12 +216,12 @@ export default function ContactUs() {
             <div className="grid-container">
                 <div className="leftmost-container"></div>
                 <div className="middle-container">
-                    <PageHeader/>
+                    <NavBar/>
                     <Body/>
                 </div>
                 <div className="rightmost-container"></div>
+                <Footer/>
             </div>
-            <Footer/>
         </div>
     )
 }
