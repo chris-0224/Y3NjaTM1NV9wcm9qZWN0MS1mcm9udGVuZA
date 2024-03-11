@@ -1,15 +1,7 @@
 
-.homepage-container hr {
-    border: 1px solid lightgray;
-}
-
 .homepage-container .grid-container {
     display: grid;
     grid-template-columns: auto 1280px auto;
-}
-
-.homepage-container .middle-container {
-
 }
 
 .homepage-container .body-container > p {
@@ -29,4 +21,89 @@
 
 .homepage-container .body-container > p span {
     text-decoration: underline;
+}
+
+.homepage-container .section-header {
+    border-radius: 20px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    margin: 50px 0;
+}
+
+.homepage-container .section-header.type1 {
+    background: rgb(130,76,76);
+    background: linear-gradient(90deg, rgba(130,76,76,1) 0%, rgba(175,175,175,0) 50%);
+
+    padding-left: 20px;
+}
+
+.homepage-container .section-header.type2 {
+    background: rgba(130,76,76,80%);
+    box-shadow: 0 0 20px 10px rgb(143, 93, 93);
+    text-align: center;
+}
+
+/**/
+.search-form-container .search-input-flex-container {
+    position: relative;
+
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-form-container .search-input-flex-container input {
+    width: 400px;
+    border-radius: 10px;
+    padding: 10px 50px 10px 10px;
+}
+
+.search-form-container .search-input-flex-container input:focus {
+    box-shadow: 0 0 10px 5px lightgray;
+}
+
+.search-form-container .search-input-flex-container button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+    background: transparent;
+    border: 0;
+    padding: 0;
+
+    cursor: pointer;
+
+    transition: 0.1s ease;
+}
+
+.search-form-container .search-input-flex-container button img {
+    width: 30px;
+}
+
+.search-form-container .search-input-flex-container button:active {
+    transform: scale(0.8,0.8);
+}
+
+.search-form-container h3 {
+    margin: 10px 0;
+
+    text-decoration: underline;
+}
+
+.search-form-container .filters-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+}
+
+.search-form-container input[type="number"],.search-form-container select {
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.search-form-container .checkbox-group label {
+    margin-right: 10px;
 }
