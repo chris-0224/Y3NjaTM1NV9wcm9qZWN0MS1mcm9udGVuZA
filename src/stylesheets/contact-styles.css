@@ -38,11 +38,57 @@
     text-align: center;
 }
 
+/* QA-BOX STYLES */
+.qa-box-container {
+    width: 640px;
+    padding: 10px 40px 10px 20px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+
+    border: 5px inset black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px lightgray;
+
+    background-color: lightgray;
+}
+
+.qa-box-container h3, .qa-box-container p {
+    color: black;
+}
+
+.qa-box-container p {
+    font-family: Arial, sans-serif;
+}
+.qa-box-container h3 {
+    margin: 0;
+}
+
+.qa-box-container .flex-container {
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.qa-box-container button {
+    flex-basis: fit-content;
+    margin-left: auto;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.qa-box-container button img {
+    width: 25px;
+}
+/** end **/
+
 /* LIST STYLES*/
-.contact-us-page-container .q-a-list li, ul {
+.contact-us-page-container .faq-list li, ul {
     margin-bottom: 1em;
 }
-.contact-us-page-container .q-a-list li ul {
+.contact-us-page-container .faq-list li ul {
     list-style-type: disc;
 }
 
@@ -51,15 +97,15 @@
     color: inherit;
 }
 
-.contact-us-page-container .qa-sections-list > li::marker {
+.contact-us-page-container .faq-sections-list > li::marker {
     font-size: 1.5em;
 }
 
-.contact-us-page-container .qa-sections-list ul {
+.contact-us-page-container .faq-sections-list ul {
     list-style-type: disc;
 }
 
-.contact-us-page-container .qa-sections-list ul li::marker {
+.contact-us-page-container .faq-sections-list ul li::marker {
     font-size: 1.25em;
 }
 
