@@ -41,4 +41,4 @@ export const eventInformation = [
         entranceFee: 10.00,
         eventID: 5
     }
-]
+];
