@@ -48,9 +48,6 @@
 
 .storepage-container .items-grid-container {
     grid-area: items-grid;
-    /*
-    justify-content: center;
-    */
 
     display: grid;
     grid-template-columns: 250px 250px 250px 250px;
@@ -121,9 +118,6 @@
 
 .storepage-container .item-container img{
     display: block;
-    /*
-    margin-bottom: 40px;
-    */
     border-radius: 10px;
 }
 
