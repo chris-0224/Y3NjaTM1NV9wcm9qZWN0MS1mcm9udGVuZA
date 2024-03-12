@@ -12,6 +12,7 @@ import gamingTourn from '../media/gaming-tournament.jpg';
 import eldenring from '../media/elden-ring.jpg';
 
 import searchIcon from '../icons/icon-search.svg';
+import {dummyText} from "../data.ts";
 
 function Filters(){
 
@@ -147,10 +148,22 @@ function Body() {
 
     return (
         <div className="body-container">
-            <p>Delivering the newest and hottest
+            <p className="main-header-paragraph">Delivering the newest and hottest
                 <br/>All-things-Gaming&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br/>&nbsp;&nbsp;<span>in speedy time</span>.</p>
+
+            <h2 className="latest-news-header">CHECK OUT THE LATEST NEWS</h2>
             <ExpandingCards panels={panelsData}/>
+
+            <h2 className="latest-event-header">CHECK OUT OUR RECENT EVENT!</h2>
+            <div className="video-container">
+                <iframe width="640" height="400" src="https://www.youtube.com/embed/LsiaQim9AiY?si=6JDdA-SaIZnGgTLu"
+                        title="YouTube video player" frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen>
+                </iframe>
+            </div>
+            <p className="latest-news-desc">{dummyText}</p>
 
             <div className="search-item-container">
                 <h2 className="section-header type2">LOOKING FOR SOMETHING?</h2>
