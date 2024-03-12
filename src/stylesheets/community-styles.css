@@ -1,3 +1,4 @@
+/* ############################# GENERAL STYLES ############################# */
 .community-events-container .community-page-header {
     background: rgb(167,52,52);
     background: radial-gradient(circle, rgba(167,52,52,1) 0%, rgba(130,76,76,0) 100%);
@@ -42,6 +43,8 @@
     box-shadow: 0 0 20px 10px rgb(143, 93, 93);
     text-align: center;
 }
+
+/* ############################# TABLE STYLES ############################# */
 
 .community-events-container .events-schedule-table {
     width: 100%;
