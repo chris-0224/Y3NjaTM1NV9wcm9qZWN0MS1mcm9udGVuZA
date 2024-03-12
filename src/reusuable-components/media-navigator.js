@@ -16,13 +16,12 @@ export default function MediaNavigator({mediaList}){
 
     return (
         <div className="media-navigator-container">
-            <MediaPromotion id={currMedia.id} title={currMedia.title} img={currMedia.img} desc={currMedia.desc} width={currMedia.width} height={currMedia.height}/>
+            <MediaPromotion id={currMedia.id} title={currMedia.title} img={currMedia.img} desc={currMedia.desc}
+                            width={currMedia.width} height={currMedia.height}/>
 
             <div className="progress-container">
                 <div className="progress" id="progress"
-                     style={{
-                         width: (mediaActiveIndex / (mediaList.length - 1) * 100) + '%'
-                     }}
+                     style={{width: (mediaActiveIndex / (mediaList.length - 1) * 100) + '%'}}
                 ></div>
                 {mediaList.map((val, index)=>{
                     return (
