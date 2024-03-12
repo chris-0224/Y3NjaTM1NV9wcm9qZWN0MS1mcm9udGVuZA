@@ -1,4 +1,6 @@
 
+/* ############################# GENERAL STYLES ############################# */
+
 .homepage-container .grid-container {
     display: grid;
     grid-template-columns: auto 1280px auto;
@@ -45,7 +47,7 @@
     text-align: center;
 }
 
-/**/
+/* ############################# SEARCH FORM STYLES ############################# */
 .search-form-container .search-input-flex-container {
     position: relative;
 
