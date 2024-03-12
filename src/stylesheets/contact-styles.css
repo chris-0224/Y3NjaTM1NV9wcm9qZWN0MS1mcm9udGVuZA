@@ -1,3 +1,6 @@
+
+/* ############################# GENERAL STYLES ############################# */
+
 .contact-us-page-container .community-page-header {
     background: rgb(167,52,52);
     background: radial-gradient(circle, rgba(167,52,52,1) 0%, rgba(130,76,76,0) 100%);
@@ -38,7 +41,7 @@
     text-align: center;
 }
 
-/* QA-BOX STYLES */
+/* ############################# QABOX STYLES ############################# */
 .qa-box-container {
     width: 640px;
     padding: 10px 40px 10px 20px;
@@ -84,7 +87,7 @@
 }
 /** end **/
 
-/* LIST STYLES*/
+/* ############################# LIST STYLES ############################# */
 .contact-us-page-container .faq-list li, ul {
     margin-bottom: 1em;
 }
