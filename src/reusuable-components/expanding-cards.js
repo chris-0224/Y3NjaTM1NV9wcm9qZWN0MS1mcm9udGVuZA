@@ -1,22 +1,14 @@
-import {createRef, useRef, useState} from "react";
+import {useRef, useState} from "react";
 import {CSSTransition} from "react-transition-group";
 
 export default function ExpandingCards({panels}){
     const [activePanel, setActivePanel] = useState(null);
-    const refs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
+    const refs = [useRef(null), useRef(null), useRef(null),
+        useRef(null), useRef(null)];
 
     function onClick(panelID){
         setActivePanel(panelID);
     }
-    panels.map((panel, index) => {
-        return (
-            {
-                panelID: index,
-                panelObj: panel,
-                panelRef: createRef()
-            }
-        )
-    });
 
     return (
         <div className="expanding-cards-container">
