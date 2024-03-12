@@ -1,16 +1,10 @@
-import {useEffect, useState} from "react";
-import {getStoreItems} from "../data-interface";
 import placeholder_img from "../media/placeholder-image.png";
 
 function Item({name, price, img, notes}){
     const item_image = img ? img : placeholder_img;
 
-    function itemClicked(e){
-        console.log(e);
-    }
-
     return (
-        <button className="item-container" onClick={itemClicked}>
+        <button className="item-container">
             <img src={item_image} alt="item" width="100%"/>
             <div className="item-desc-container">
                 <div className="flex-container">
@@ -24,20 +18,28 @@ function Item({name, price, img, notes}){
 }
 
 export default function ItemsGrid(){
-    const [items, setItems] = useState(null);
+    const itemsAry = (()=> {
+        const items = [];
 
-    useEffect(() => {
-        setItems(getStoreItems());
-    }, []);
+        for (let i= 0; i < 8; i++){
+            items.push(
+                {
+                    name: `Item ${i+1}`,
+                    imageUrl: null,
+                    price: Math.floor(Math.random() * 100) + 0.99,
+                    notes: "Limited Edition!"
+                }
+            )
+        }
+        return (items)
+    })();
 
     return (
         <div className="items-grid-container">
-            {items ?
-                items.map((item) => {
-                    return <Item key={crypto.randomUUID()} name={item.name} price={item.price}
-                                 img={item.imageUrl} notes={item.notes}/>;
-                })
-                : <></>
+            {itemsAry.map((item) => {
+                return <Item key={crypto.randomUUID()} name={item.name} price={item.price}
+                             img={item.imageUrl} notes={item.notes}/>;
+            })
             }
         </div>
     )
