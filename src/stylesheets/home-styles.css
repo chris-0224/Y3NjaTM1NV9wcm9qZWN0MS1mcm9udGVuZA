@@ -6,7 +6,7 @@
     grid-template-columns: auto 1280px auto;
 }
 
-.homepage-container .body-container > p {
+.homepage-container .main-header-paragraph {
     font-size: 3rem;
     text-wrap: normal;
     font-weight: 1;
@@ -23,6 +23,19 @@
 
 .homepage-container .body-container > p span {
     text-decoration: underline;
+}
+
+.homepage-container .latest-news-header,.homepage-container .latest-event-header {
+    background: rgb(167,52,52);
+    background: radial-gradient(circle, rgba(167,52,52,1) 0%, rgba(130,76,76,0) 100%);
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+    text-align: center;
+    letter-spacing: 0.5em;
 }
 
 .homepage-container .section-header {
@@ -47,6 +60,26 @@
     text-align: center;
 }
 
+.homepage-container .video-container {
+    width: fit-content;
+    margin: 100px auto;
+
+    box-shadow: 0 0 20px 10px rgb(143, 93, 93);
+
+    transition: 0.25s ease;
+}
+
+.homepage-container .video-container:hover {
+    transform: scale(1.1,1.1);
+}
+
+.homepage-container .latest-news-desc {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+    line-height: 1.5;
+}
 /* ############################# SEARCH FORM STYLES ############################# */
 .search-form-container .search-input-flex-container {
     position: relative;
