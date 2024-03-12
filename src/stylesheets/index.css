@@ -147,6 +147,17 @@ body {
   color: lightgray;
 }
 
+.page-footer-container p {
+  text-align: center;
+  font-style: italic;
+
+  text-shadow: 1px 1px 10px lightgray;
+}
+
+.page-footer-container span {
+  text-decoration: underline;
+}
+
 /******************************SEARCH BAR STYLES******************************/
 .search-bar {
   display: flex;
