@@ -5,6 +5,8 @@ export const dummyText3 = "Curabitur pulvinar lorem vitae orci cursus, ut consec
 export const dummyText4 = "Sed porttitor metus efficitur, efficitur neque vitae, fermentum dui. Proin tempor sem eleifend nibh elementum volutpat. Nullam vel nibh eget velit interdum vestibulum in sit amet massa. Integer feugiat auctor congue. Proin iaculis nibh mauris, a congue nulla volutpat ut. Praesent sit amet imperdiet neque. Sed sed volutpat tortor. Suspendisse potenti. Cras eleifend urna posuere ipsum sagittis euismod.";
 export const dummyText5 = "Phasellus at quam eu lorem posuere sodales. Praesent pellentesque tempus tellus, vehicula bibendum tellus accumsan eu. Vivamus erat tortor, vulputate volutpat varius nec, gravida eget nulla. In a porttitor lacus. Cras ex diam, tempor in enim vitae, sodales aliquam arcu. Nam ligula nibh, posuere eget dictum eget, vestibulum non nibh. Praesent sollicitudin risus sed aliquam dignissim.";
 
+export const shortDummyText = "Proin quis tortor non mi lacinia semper. Duis tincidunt lacinia dolor, et maximus tellus tristique ac. Nullam in orci vehicula, consequat tortor eget, porttitor turpis.";
+
 export const eventInformation = [
     {
         dateTime: "March 25, 2024 @ 12:45PM EST",
