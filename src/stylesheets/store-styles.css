@@ -1,4 +1,6 @@
 
+/* ############################# GENERAL STYLES ############################# */
+
 .storepage-container .store-header {
     background: rgb(167,52,52);
     background: radial-gradient(circle, rgba(167,52,52,1) 0%, rgba(130,76,76,0) 100%);
@@ -45,6 +47,8 @@
     display: grid;
     grid-template-columns: auto 1280px auto;
 }
+
+/* ############################# ITEMSGRID STYLES ############################# */
 
 .storepage-container .items-grid-container {
     grid-area: items-grid;
@@ -132,16 +136,8 @@
 .storepage-container .section-container {
     margin-bottom: 100px;
 }
-/* FILTERS CONTAINER */
 
-.storepage-container .filters-container {
-    grid-area: filters-container;
-
-    background-color: lightgray;
-    border-radius: 10px;
-}
-
-/**/
+/* ############################# SECTION STYLES ############################# */
 
 .storepage-container #games-promo .content-body-container, #hardware-promo .content-body-container{
     margin: 0 auto 0 5%;
@@ -157,7 +153,8 @@
     order: 2;
 }
 
-/**/
+/* ############################# CATEGORIES-GRID CONTAINER STYLES ############################# */
+
 .storepage-container .categories-grid-container {
     display: grid;
     grid-template-columns: 200px 200px 200px 200px;
