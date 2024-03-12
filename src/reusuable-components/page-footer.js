@@ -37,6 +37,7 @@ export default function Footer(){
                     <FooterSection header="ABOUT US" itemsList={aboutus_LinkNames}/>
                 </div>
             </div>
+            <p>Website created by <span>Christian Perez</span></p>
         </div>
     )
 }
